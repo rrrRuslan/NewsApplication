@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/NewsListFragment">
+
+    <fragment
+        android:id="@+id/NewsListFragment"
+        android:name="com.example.newsproject.mainfragment.NewsListFragment"
+        android:label="@string/main_fragment_label"
+        tools:layout="@layout/news_list_fragment">
+
+        <action
+            android:id="@+id/action_NewsListFragment_to_DetailsFragment"
+            app:destination="@id/DetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/DetailsFragment"
+        android:name="com.example.newsproject.DetailsFragment"
+        android:label="@string/details_fragment_label"
+        tools:layout="@layout/details_fragment">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/NewsListFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+
+        <action
+            android:id="@+id/action_DetailsFragment_to_SavedFragment"
+            app:destination="@id/SavedFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/SavedFragment"
+        android:name="com.example.newsproject.SavedFragment"
+        android:label="@string/saved_fragment_label"
+        tools:layout="@layout/saved_fragment">
+
+    </fragment>
+
+</navigation>
